@@ -39,19 +39,6 @@ let buttonThree = document.getElementById("answer-3");
 let buttonFour = document.getElementById("answer-4");
 let score = 0;
 let currentQuestionIndex = 0;
-startbtn.textContent
-startbtn.addEventListener("click", function(){
-    //if statment when a button is clicked, compare the text content to that button to the answer
-    //if the answer is correct, add to the quiz takers score and run next quiz function
-    //else if the answer is wrong, subtract from the takers score and run the next quiz funtion
-    //button.addEventListener("click", function(){if else statment written above})
-
-    //need to convert list items to buttons
-    h2Element.textContent = QUIZZES[0].questionText ;
-    buttonOne.textContent = QUIZZES[0].choices[0];
-    buttonTwo.textContent = QUIZZES[0].choices[1];
-    buttonThree.textContent = QUIZZES[0].choices[2];
-    buttonFour.textContent = QUIZZES[0].choices[3];
 
 function checkAnswer(buttonText) {
     if (buttonText === QUIZZES[currentQuestionIndex].correctAnswer) {
