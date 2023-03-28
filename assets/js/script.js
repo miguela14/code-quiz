@@ -1,6 +1,6 @@
 const QUIZZES = [
     {
-        questionText: "what file is used to style a webpage.",
+        questionText: "what file is used to style a webpage?",
         choices: [
             "javascript",
             "html",
@@ -17,7 +17,7 @@ const QUIZZES = [
             "Function",
             "Loop"
         ],
-        correctAnswer: 2
+        correctAnswer: "Function"
     },
     {
         questionText: "What dose this equation mean ? a != t",
@@ -27,19 +27,19 @@ const QUIZZES = [
             "A is not equal to t",
             "T is add to a"
         ],
-        correctAnswer: 2
+        correctAnswer: "A is not equal to t"
     }
 ]
 
-let startbtn = document.getElementById("js-start-button")
-let h2Element = document.getElementById("js-question-text")
-let buttonOne = document.getElementById("answer-1")
-let buttonTwo = document.getElementById("answer-2")
-let buttonThree = document.getElementById("answer-3")
-let buttonFour = document.getElementById("answer-4")
-// startbtn.textContent
-const buttons = document.querySelectorAll(".answer-choice")
-
+let startbtn = document.getElementById("js-start-button");
+let h2Element = document.getElementById("js-question-text");
+let buttonOne = document.getElementById("answer-1");
+let buttonTwo = document.getElementById("answer-2");
+let buttonThree = document.getElementById("answer-3");
+let buttonFour = document.getElementById("answer-4");
+let score = 0;
+let currentQuestionIndex = 0;
+startbtn.textContent
 startbtn.addEventListener("click", function(){
     //if statment when a button is clicked, compare the text content to that button to the answer
     //if the answer is correct, add to the quiz takers score and run next quiz function
@@ -53,35 +53,46 @@ startbtn.addEventListener("click", function(){
     buttonThree.textContent = QUIZZES[0].choices[2];
     buttonFour.textContent = QUIZZES[0].choices[3];
 
-   buttonOne.addEventListener("click", function(){ 
-
-        console.log("you chose" + buttonOne.textContent)
-
+function checkAnswer(buttonText) {
+    if (buttonText === QUIZZES[currentQuestionIndex].correctAnswer) {
+        score++; // increment score if correct answer chosen
+        console.log("Correct answer!");
+    } else {
+        console.log("Wrong answer! :(");
     }
-   )
-});
+    currentQuestionIndex++; // move on to next quiz question
+    if (currentQuestionIndex < QUIZZES.length) {
+        // display next quiz question if available
+        displayQuiz(currentQuestionIndex);
+    } else {
+        // end of quiz
+        console.log(`Quiz complete! Score: ${score}`);
+    };
+};
 
-function nextQuiz (){
-    startbtn.addEventListener("click", function(){
-        h2Element.textContent = QUIZZES[1].questionText ;
-        choiceOne.textContent = QUIZZES[1].choices[0]
-        choiceTwo.textContent = QUIZZES[1].choices[1]
-        choiceThree.textContent = QUIZZES[1].choices[2]
-        choiceFour.textContent = QUIZZES[1].choices[3]
-    
+function displayQuiz(index) {
+    // display quiz question and choices for given index
+    h2Element.textContent = QUIZZES[index].questionText;
+    buttonOne.textContent = QUIZZES[index].choices[0];
+    buttonTwo.textContent = QUIZZES[index].choices[1];
+    buttonThree.textContent = QUIZZES[index].choices[2];
+    buttonFour.textContent = QUIZZES[index].choices[3];
+
+    // add event listeners to each button to check answer and move on to next quiz
+    buttonOne.addEventListener("click", function() {
+        checkAnswer(buttonOne.textContent);
     });
+    buttonTwo.addEventListener("click", function() {
+        checkAnswer(buttonTwo.textContent);
+    });
+    buttonThree.addEventListener("click", function() {
+        checkAnswer(buttonThree.textContent);
+    });
+    buttonFour.addEventListener("click", function() {
+        checkAnswer(buttonFour.textContent);
+    });
+};
 
-
-function lastQuiz (){
-        startbtn.addEventListener("click", function(){
-            h2Element.textContent = QUIZZES[2].questionText ;
-            choiceOne.textContent = QUIZZES[2].choices[0]
-            choiceTwo.textContent = QUIZZES[2].choices[1]
-            choiceThree.textContent = QUIZZES[2].choices[2]
-            choiceFour.textContent = QUIZZES[2].choices[3]
-        
-            console.log("start button was clicked")
-         
-        });
-    }
-}
+startbtn.addEventListener("click", function() {
+    displayQuiz(currentQuestionIndex);
+});
