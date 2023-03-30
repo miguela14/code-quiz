@@ -1,47 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets\css\style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets\css\style.css" />
     <title>Code Quiz</title>
-</head>
+  </head>
 
-<header>
+  <header>
     <div id="timer">time</div>
-</header>
+  </header>
 
-<body>
+  <body>
     <div class="start-screen">
-        <h1>Coding quiz challenge</h1>
-        <p>click below to start the quiz.</p>
-        <button id="js-start-button">start quiz</button>
+      <h1>Coding quiz challenge</h1>
+      <p>click below to start the quiz.</p>
+      <button id="js-start-button">start quiz</button>
     </div>
 
-<section class="quiz-section">
-    <h2 id="js-question-text">
-    <!-- use JS to put question text here -->
-    </h2>
-        <ul>
-                <button type="button" id="answer-1"></button>
-                <button type="button" id="answer-2"></button>
-                <button type="button" id="answer-3"></button>
-                <button type="button" id="answer-4"></button>
-        </ul>
-</section>
+    <section class="quiz-section">
+      <h2 id="js-question-text"></h2>
+      <ul>
+        <button type="button" id="answer-1"></button>
+        <button type="button" id="answer-2"></button>
+        <button type="button" id="answer-3"></button>
+        <button type="button" id="answer-4"></button>
+      </ul>
+    </section>
 
-<section class="input-form">
-    <h3>Game Over!</h3>
-    <div>
-        <p>Enter Initials:</p>
-        <input type="text" id="text-box">
-        <button type="button" id="submit-form">Submit</button>
-    </div>
-</section>
-
-
+    <section class="input-form" style="display: none">
+      <h3>Game Over!</h3>
+      <p>Your score: <span id="js-score"></span></p>
+      <lable for="initials">Enter your initials:</lable>"
+      <input type="text" id="initials" name="initials" required />
+      <button type="button" id="js-submit-button">Submit</button>
+    </section>
 
     <script src="./assets/js/script.js"></script>
-</body>
+  </body>
 </html>
