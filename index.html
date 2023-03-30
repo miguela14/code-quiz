@@ -8,13 +8,18 @@
     <title>Code Quiz</title>
 </head>
 
+<header>
+    <div id="timer">time</div>
+</header>
+
 <body>
-    <div class="start-screen">time:</div>
+    <div class="start-screen">
         <h1>Coding quiz challenge</h1>
         <p>click below to start the quiz.</p>
         <button id="js-start-button">start quiz</button>
+    </div>
 
-<section>
+<section class="quiz-section">
     <h2 id="js-question-text">
     <!-- use JS to put question text here -->
     </h2>
@@ -25,6 +30,16 @@
                 <button type="button" id="answer-4"></button>
         </ul>
 </section>
+
+<section class="input-form">
+    <h3>Game Over!</h3>
+    <div>
+        <p>Enter Initials:</p>
+        <input type="text" id="text-box">
+        <button type="button" id="submit-form">Submit</button>
+    </div>
+</section>
+
 
 
     <script src="./assets/js/script.js"></script>
