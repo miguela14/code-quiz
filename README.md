@@ -1,18 +1,12 @@
 # Code Quiz
 
-## Code quiz make from scratch (HTML, CSS, JavaScript)
+## Code quiz made from scratch (HTML, CSS, JavaScript)
 
+This is a simple quiz application built with HTML, CSS, and JavaScript. It allows users to test their knowledge of coding concepts and provides a score at the end of the quiz.
 
+### Usage
 
+To start the quiz, click the "Start Quiz" button on the home screen. Each question has four possible answers, and users must select the correct one to proceed to the next question. The quiz is timed, and incorrect answers will deduct time from the user's score. At the end of the quiz, users can enter their initials to save their score to the high score list.
 
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and my score
+![](/assets/images/code-quiz.png)
+
